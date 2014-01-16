@@ -22,6 +22,16 @@ UpdatePreviews = function()
         changeFrameURL();
     });
     
+    // add class when mouse over
+    iframes.mouseenter(function() {
+        $(this).addClass("mouseOver");
+    })
+    
+    //remove class when mouse out
+    iframes.mouseleave(function() {
+        $(this).removeClass("mouseOver");
+    })
+    
     // listen for a url
     if (window.addEventListener) {
         window.addEventListener ("message", receiveMessage, false);        
@@ -55,9 +65,10 @@ UpdatePreviews = function()
     // update each iframe to the url
     function changeFrameURL()
     {
-        iframes.each(function() {            
+        iframes.each(function() {
             // only reload if src and url are different
-            if(url != $(this).attr("src")) {
+            // only reload if it doesnt have the "mouseOver" class
+            if(url != $(this).attr("src") && !$(this).hasClass("mouseOver")) {
                 $(this).attr("src", url);
             }
         });
@@ -68,7 +79,7 @@ UpdatePreviews = function()
     //change all frames when message recieved
     function receiveMessage(event)
     {
-        // make sure url isn't the same as the one recieved
+        // make sure url isn't the same as the one received
         if(event.data != url) {
             // set the url
             url = event.data;
