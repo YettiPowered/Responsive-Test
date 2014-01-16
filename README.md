@@ -17,6 +17,6 @@ This should not replace your usual testing of a responsive website, it is to giv
     </script>
 ```
 
-2. Visit the [Responsive Test page](http://link.com) and type your URL into the box.  
+2. Visit the [Responsive Test page](http://yettipowered.github.io/Responsive-Test/) and type your URL into the box.  
 Each frame will then load your site, you can then click around within the frames.  
 If you added the JavaScript above, each frame will update as a new page is loaded.
