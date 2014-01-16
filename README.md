@@ -8,7 +8,13 @@ This should not replace your usual testing of a responsive website, it is to giv
 
 1. Add the responsiveTest.js to your site (optional):
 ```html
-    <script src="/js/responsiveTest.js"></script>
+    <script>
+    window.onload = function() {
+        var url = location.href;
+        
+        parent.postMessage(url, '*');
+    };
+    </script>
 ```
 
 2. Visit the [Responsive Test page](http://link.com) and type your URL into the box.  
