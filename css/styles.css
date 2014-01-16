@@ -1,0 +1,141 @@
+/*----------------------------------------------------------------------------------------------------------------*\
+    BASIC RESET
+\*----------------------------------------------------------------------------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
+
+body {
+    background: #fff;
+    
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    TEXT
+\*----------------------------------------------------------------------------------------------------------------*/
+h1 {
+    margin-bottom: 10px;
+    
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h1.jumbo {
+	font-size: 30px;
+    line-height: 30px;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    TITLE BAR
+\*----------------------------------------------------------------------------------------------------------------*/
+.titleBar {
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 40px;
+    
+    background: #fff url("../images/bg-header.jpg") repeat;
+}
+
+.titleBar .instructions {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    FORM
+\*----------------------------------------------------------------------------------------------------------------*/
+input {
+    width: 500px;
+    padding: 9px;
+    display: inline-block;
+}
+
+button {
+    padding: 8px 20px;
+    border: 1px solid #e1632d;
+    display: inline-block;
+    
+    background-color: #f85006;
+    background-image: -ms-linear-gradient(top, #fa7f4a, #f85006);
+    background-image: -webkit-linear-gradient(top, #fa7f4a, #f85006);
+    background-image: -o-linear-gradient(top, #fa7f4a, #f85006);
+    background-image: linear-gradient(top, #fa7f4a, #f85006);
+    background-image: -moz-linear-gradient(top, #fa7f4a, #f85006);
+    
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;   
+    text-align: center;
+    text-shadow: 0px -1px 0px #444;
+    
+    position: relative;
+    
+    border-radius: 5px;
+    
+    -moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+button:before {
+    content: " ";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-top: 1px solid #fb9c73;
+    
+    border-radius: 5px;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    PREVIEWS
+\*----------------------------------------------------------------------------------------------------------------*/
+.previews {
+	margin-bottom: 50px;
+}
+
+.preview {
+	margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.preview iframe {
+    border: 1px solid #e5e5e5;
+}
