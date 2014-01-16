@@ -5,7 +5,8 @@ UpdatePreviews = function()
     var iframes = $("iframe");
     
     //url
-    var url = "http://labelmedia.co.uk";
+    var defaultURL = "http://labelmedia.co.uk";
+    var url = defaultURL;
     
     // update url when form submitted
     $("form").submit(function(event) {
@@ -19,24 +20,64 @@ UpdatePreviews = function()
         
         // change frames to url
         changeFrameURL();
-    });    
+    });
+    
+    // listen for a url
+    if (window.addEventListener) {
+        window.addEventListener ("message", receiveMessage, false);        
+    } else {
+        if (window.attachEvent) {
+            window.attachEvent("onmessage", receiveMessage, false);
+        }
+    }
+    
+    
     
     // update each iframe to the url
     function checkURL()
     {
-        // makes sure url starts with "http://" or "https://"
+        // make sure url is a string
+        // if not, revert to defaulr url
+        if(typeof url != 'string') {
+            url = defaultURL;
+        }
+        
+        // make sure url starts with "http://" or "https://"
+        // if not, add it on
         if (url.substr(0,7) !== "http://" && url.substr(0,8) !== "https://")
         {
             url = "http://" + url;
         }
     }
     
+    
+    
     // update each iframe to the url
     function changeFrameURL()
     {
-        iframes.each(function() {
-            $(this).attr("src", url);
+        iframes.each(function() {            
+            // only reload if src and url are different
+            //only reload if the url and last url are different
+            if(url != $(this).attr("src")) {
+                $(this).attr("src", url);
+            }
         });
+    }
+    
+    
+    
+    //change all frames when message recieved
+    function receiveMessage(event)
+    {
+        // make sure url isn't the same as the one recieved
+        if(event.data != url) {
+            // set the url
+            url = event.data;
+            
+            // change frames to the new url
+            checkURL();
+            changeFrameURL();
+        }
     }
 };
 
