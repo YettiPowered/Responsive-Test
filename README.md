@@ -6,7 +6,7 @@ This should not replace your usual testing of a responsive website, it is to giv
 
 ##Usage instructions
 
-1. Add the responsiveTest.js to your site (optional):
+1. Add this JavaScript to your site (optional):
 ```html
     <script>
     window.onload = function() {

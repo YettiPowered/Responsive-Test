@@ -46,6 +46,17 @@ h1.jumbo {
     line-height: 30px;
 }
 
+pre, code {
+    font-family: monospace, sans-serif;
+}
+
+pre {
+    padding: 15px;
+    white-space: pre; 
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+}
+
 
 
 
@@ -138,4 +149,29 @@ button:before {
 
 .preview iframe {
     border: 1px solid #e5e5e5;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*\
+    JS INCLUDE
+\*----------------------------------------------------------------------------------------------------------------*/
+.JS {
+	width: 300px;
+	border-radius: 5px;
+	margin-left: -150px;
+	box-shadow: 0 0 4px #999;
+	display: none;
+	
+	background: #F2F8FF;
+	
+	font-size: 14px;
+	line-height: 14px;
+	text-align: left;
+	
+	position: absolute;
+	top: 60px;
+	left: 50%;
 }

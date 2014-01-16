@@ -15,7 +15,7 @@
                 <h1 class="jumbo">Responsive test</h1>
                 
                 Type in the address of the site you want to test, and hit preview. <br />
-                Optionaly add <a href="/js/responsiveTest.js">this Javascript</a> to your site, this allows all the frames to mirror 
+                Optionaly add <a class="showJS" href="#">this Javascript</a> to your site, this allows all the frames to mirror 
                 each other when you navigate.
 	        </div>
 	        
@@ -77,6 +77,15 @@
 	                src="http://label.dev.yetti.co.uk" >
 	            </iframe>
 	        </div>
+	    </div>
+	    
+	    <div class="JS">
+	       <pre><code>&lt;script&gt;
+				window.onload = function() {
+				var url = location.href;
+				parent.postMessage(url, '*');
+				};
+				&lt;/script&gt;</code></pre>
 	    </div>
     </body>
 </html>

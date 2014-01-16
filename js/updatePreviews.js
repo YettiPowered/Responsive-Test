@@ -4,9 +4,8 @@ UpdatePreviews = function()
     var input = $("input").first();
     var iframes = $("iframe");
     
-    //url
-    var defaultURL = "http://labelmedia.co.uk";
-    var url = defaultURL;
+    // url
+    var url = "http://labelmedia.co.uk";
     
     // update url when form submitted
     $("form").submit(function(event) {
@@ -47,9 +46,9 @@ UpdatePreviews = function()
     function checkURL()
     {
         // make sure url is a string
-        // if not, revert to defaulr url
+        // if not, revert to default url
         if(typeof url != 'string') {
-            url = defaultURL;
+            url = "http://labelmedia.co.uk";
         }
         
         // make sure url starts with "http://" or "https://"
@@ -91,7 +90,29 @@ UpdatePreviews = function()
     }
 };
 
+
+ShowJS = function() 
+{ 
+    // show/hide JS on click
+    $(".showJS").click(function(event) {
+        event.preventDefault();
+        
+        $(".JS").fadeToggle(100);
+    });
+    
+    // hide JS on click anywhere
+    $(document).click(function(event) {
+        $(".JS").fadeOut(100);
+    });
+    
+    // dont hide when clicking inside modal
+    $(".JS, .showJS").click(function(event) {
+        event.stopPropagation();
+    });
+};
+
 $(function() 
 {
     new UpdatePreviews();
+    new ShowJS();
 });
