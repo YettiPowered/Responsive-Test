@@ -57,7 +57,6 @@ UpdatePreviews = function()
     {
         iframes.each(function() {            
             // only reload if src and url are different
-            //only reload if the url and last url are different
             if(url != $(this).attr("src")) {
                 $(this).attr("src", url);
             }
